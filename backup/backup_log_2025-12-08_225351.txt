@@ -1,0 +1,381 @@
+BACKUP FILE SAMPAH
+Tanggal: 2025-12-08 22:53:51
+======================================================================
+
+FILE YANG DIBACKUP:
+----------------------------------------------------------------------
+
+Type: script
+Original: C:\laragon\www\Managemen Data Santri/fix_419_error.php
+Backup: C:\laragon\www\Managemen Data Santri/backup/scripts/fix_419_error.php
+Size: 4.94 KB
+
+Type: script
+Original: C:\laragon\www\Managemen Data Santri/fix_admin_password.php
+Backup: C:\laragon\www\Managemen Data Santri/backup/scripts/fix_admin_password.php
+Size: 1.75 KB
+
+Type: script
+Original: C:\laragon\www\Managemen Data Santri/fix_all_issues.php
+Backup: C:\laragon\www\Managemen Data Santri/backup/scripts/fix_all_issues.php
+Size: 4.26 KB
+
+Type: script
+Original: C:\laragon\www\Managemen Data Santri/fix_login_admin.php
+Backup: C:\laragon\www\Managemen Data Santri/backup/scripts/fix_login_admin.php
+Size: 8.22 KB
+
+Type: script
+Original: C:\laragon\www\Managemen Data Santri/fix_login_final.php
+Backup: C:\laragon\www\Managemen Data Santri/backup/scripts/fix_login_final.php
+Size: 3.77 KB
+
+Type: script
+Original: C:\laragon\www\Managemen Data Santri/fix_login_saput.php
+Backup: C:\laragon\www\Managemen Data Santri/backup/scripts/fix_login_saput.php
+Size: 6.29 KB
+
+Type: script
+Original: C:\laragon\www\Managemen Data Santri/fix_migration_history.php
+Backup: C:\laragon\www\Managemen Data Santri/backup/scripts/fix_migration_history.php
+Size: 2.36 KB
+
+Type: script
+Original: C:\laragon\www\Managemen Data Santri/fix_redirect_loop_complete.php
+Backup: C:\laragon\www\Managemen Data Santri/backup/scripts/fix_redirect_loop_complete.php
+Size: 4.18 KB
+
+Type: script
+Original: C:\laragon\www\Managemen Data Santri/fix_role_user.php
+Backup: C:\laragon\www\Managemen Data Santri/backup/scripts/fix_role_user.php
+Size: 2.47 KB
+
+Type: script
+Original: C:\laragon\www\Managemen Data Santri/fix_santri_passwords.php
+Backup: C:\laragon\www\Managemen Data Santri/backup/scripts/fix_santri_passwords.php
+Size: 1.68 KB
+
+Type: script
+Original: C:\laragon\www\Managemen Data Santri/fix_santri_users.php
+Backup: C:\laragon\www\Managemen Data Santri/backup/scripts/fix_santri_users.php
+Size: 3.79 KB
+
+Type: script
+Original: C:\laragon\www\Managemen Data Santri/fix_semua_masalah.php
+Backup: C:\laragon\www\Managemen Data Santri/backup/scripts/fix_semua_masalah.php
+Size: 16.27 KB
+
+Type: script
+Original: C:\laragon\www\Managemen Data Santri/fix_session_issue.php
+Backup: C:\laragon\www\Managemen Data Santri/backup/scripts/fix_session_issue.php
+Size: 3.44 KB
+
+Type: script
+Original: C:\laragon\www\Managemen Data Santri/fix_tahun_masuk.php
+Backup: C:\laragon\www\Managemen Data Santri/backup/scripts/fix_tahun_masuk.php
+Size: 5.8 KB
+
+Type: script
+Original: C:\laragon\www\Managemen Data Santri/fix_tahun_masuk_simple.php
+Backup: C:\laragon\www\Managemen Data Santri/backup/scripts/fix_tahun_masuk_simple.php
+Size: 4.59 KB
+
+Type: script
+Original: C:\laragon\www\Managemen Data Santri/fix_user_role.php
+Backup: C:\laragon\www\Managemen Data Santri/backup/scripts/fix_user_role.php
+Size: 2.23 KB
+
+Type: script
+Original: C:\laragon\www\Managemen Data Santri/clear_config_cache.php
+Backup: C:\laragon\www\Managemen Data Santri/backup/scripts/clear_config_cache.php
+Size: 1.52 KB
+
+Type: script
+Original: C:\laragon\www\Managemen Data Santri/clear_route_cache.php
+Backup: C:\laragon\www\Managemen Data Santri/backup/scripts/clear_route_cache.php
+Size: 0.91 KB
+
+Type: script
+Original: C:\laragon\www\Managemen Data Santri/clear_session.php
+Backup: C:\laragon\www\Managemen Data Santri/backup/scripts/clear_session.php
+Size: 1.75 KB
+
+Type: script
+Original: C:\laragon\www\Managemen Data Santri/create_admin_now.php
+Backup: C:\laragon\www\Managemen Data Santri/backup/scripts/create_admin_now.php
+Size: 4.26 KB
+
+Type: script
+Original: C:\laragon\www\Managemen Data Santri/create_database.php
+Backup: C:\laragon\www\Managemen Data Santri/backup/scripts/create_database.php
+Size: 6.3 KB
+
+Type: script
+Original: C:\laragon\www\Managemen Data Santri/create_sessions_table.php
+Backup: C:\laragon\www\Managemen Data Santri/backup/scripts/create_sessions_table.php
+Size: 1.14 KB
+
+Type: script
+Original: C:\laragon\www\Managemen Data Santri/test_data_santri_dashboard.php
+Backup: C:\laragon\www\Managemen Data Santri/backup/scripts/test_data_santri_dashboard.php
+Size: 6.38 KB
+
+Type: script
+Original: C:\laragon\www\Managemen Data Santri/test_login_419.php
+Backup: C:\laragon\www\Managemen Data Santri/backup/scripts/test_login_419.php
+Size: 4.25 KB
+
+Type: script
+Original: C:\laragon\www\Managemen Data Santri/test_login_santri.php
+Backup: C:\laragon\www\Managemen Data Santri/backup/scripts/test_login_santri.php
+Size: 5.91 KB
+
+Type: script
+Original: C:\laragon\www\Managemen Data Santri/test_santri_dashboard.php
+Backup: C:\laragon\www\Managemen Data Santri/backup/scripts/test_santri_dashboard.php
+Size: 6.04 KB
+
+Type: script
+Original: C:\laragon\www\Managemen Data Santri/view_database.php
+Backup: C:\laragon\www\Managemen Data Santri/backup/scripts/view_database.php
+Size: 15.55 KB
+
+Type: script
+Original: C:\laragon\www\Managemen Data Santri/setup_aplikasi.php
+Backup: C:\laragon\www\Managemen Data Santri/backup/scripts/setup_aplikasi.php
+Size: 11.65 KB
+
+Type: script
+Original: C:\laragon\www\Managemen Data Santri/add_tahun_masuk_column.php
+Backup: C:\laragon\www\Managemen Data Santri/backup/scripts/add_tahun_masuk_column.php
+Size: 2.2 KB
+
+Type: script
+Original: C:\laragon\www\Managemen Data Santri/jalankan_migration_tahun_masuk.php
+Backup: C:\laragon\www\Managemen Data Santri/backup/scripts/jalankan_migration_tahun_masuk.php
+Size: 4.74 KB
+
+Type: script
+Original: C:\laragon\www\Managemen Data Santri/force_logout_all.php
+Backup: C:\laragon\www\Managemen Data Santri/backup/scripts/force_logout_all.php
+Size: 3.27 KB
+
+Type: script
+Original: C:\laragon\www\Managemen Data Santri/cek_file_sampah.php
+Backup: C:\laragon\www\Managemen Data Santri/backup/scripts/cek_file_sampah.php
+Size: 9.13 KB
+
+Type: doc
+Original: C:\laragon\www\Managemen Data Santri/CARA_LIHAT_HASIL_PERBAIKAN.md
+Backup: C:\laragon\www\Managemen Data Santri/backup/docs/CARA_LIHAT_HASIL_PERBAIKAN.md
+Size: 4.06 KB
+
+Type: doc
+Original: C:\laragon\www\Managemen Data Santri/CARA_MEMPERBAIKI_REDIRECT_LOOP.md
+Backup: C:\laragon\www\Managemen Data Santri/backup/docs/CARA_MEMPERBAIKI_REDIRECT_LOOP.md
+Size: 5.46 KB
+
+Type: doc
+Original: C:\laragon\www\Managemen Data Santri/CARA_PERBAIKI_ERROR_419.md
+Backup: C:\laragon\www\Managemen Data Santri/backup/docs/CARA_PERBAIKI_ERROR_419.md
+Size: 3 KB
+
+Type: doc
+Original: C:\laragon\www\Managemen Data Santri/CARA_PERBAIKI_ERROR_TAHUN_MASUK.md
+Backup: C:\laragon\www\Managemen Data Santri/backup/docs/CARA_PERBAIKI_ERROR_TAHUN_MASUK.md
+Size: 2.25 KB
+
+Type: doc
+Original: C:\laragon\www\Managemen Data Santri/CARA_PERBAIKI_LOGIN_SAPUT.md
+Backup: C:\laragon\www\Managemen Data Santri/backup/docs/CARA_PERBAIKI_LOGIN_SAPUT.md
+Size: 2.5 KB
+
+Type: doc
+Original: C:\laragon\www\Managemen Data Santri/FIX_419_ERROR.md
+Backup: C:\laragon\www\Managemen Data Santri/backup/docs/FIX_419_ERROR.md
+Size: 2.81 KB
+
+Type: doc
+Original: C:\laragon\www\Managemen Data Santri/FIX_AUTO_REDIRECT.md
+Backup: C:\laragon\www\Managemen Data Santri/backup/docs/FIX_AUTO_REDIRECT.md
+Size: 3.36 KB
+
+Type: doc
+Original: C:\laragon\www\Managemen Data Santri/FIX_LOGIN_TETAP_GA_BISA.md
+Backup: C:\laragon\www\Managemen Data Santri/backup/docs/FIX_LOGIN_TETAP_GA_BISA.md
+Size: 3.01 KB
+
+Type: doc
+Original: C:\laragon\www\Managemen Data Santri/FIX_REDIRECT_LOOP.md
+Backup: C:\laragon\www\Managemen Data Santri/backup/docs/FIX_REDIRECT_LOOP.md
+Size: 4.92 KB
+
+Type: doc
+Original: C:\laragon\www\Managemen Data Santri/FIX_REDIRECT_LOOP_FINAL.md
+Backup: C:\laragon\www\Managemen Data Santri/backup/docs/FIX_REDIRECT_LOOP_FINAL.md
+Size: 3.74 KB
+
+Type: doc
+Original: C:\laragon\www\Managemen Data Santri/FIX_REDIRECT_ROLE_MENDALAM.md
+Backup: C:\laragon\www\Managemen Data Santri/backup/docs/FIX_REDIRECT_ROLE_MENDALAM.md
+Size: 6.17 KB
+
+Type: doc
+Original: C:\laragon\www\Managemen Data Santri/FIX_STORAGE_LINK.md
+Backup: C:\laragon\www\Managemen Data Santri/backup/docs/FIX_STORAGE_LINK.md
+Size: 0.82 KB
+
+Type: doc
+Original: C:\laragon\www\Managemen Data Santri/LAPORAN_CEK_APLIKASI.md
+Backup: C:\laragon\www\Managemen Data Santri/backup/docs/LAPORAN_CEK_APLIKASI.md
+Size: 11.21 KB
+
+Type: doc
+Original: C:\laragon\www\Managemen Data Santri/LAPORAN_CEK_FITUR.md
+Backup: C:\laragon\www\Managemen Data Santri/backup/docs/LAPORAN_CEK_FITUR.md
+Size: 15.1 KB
+
+Type: doc
+Original: C:\laragon\www\Managemen Data Santri/LAPORAN_CEK_LENGKAP_FINAL.md
+Backup: C:\laragon\www\Managemen Data Santri/backup/docs/LAPORAN_CEK_LENGKAP_FINAL.md
+Size: 11.05 KB
+
+Type: doc
+Original: C:\laragon\www\Managemen Data Santri/LAPORAN_CEK_LOGIN_SANTRI.md
+Backup: C:\laragon\www\Managemen Data Santri/backup/docs/LAPORAN_CEK_LOGIN_SANTRI.md
+Size: 10.45 KB
+
+Type: doc
+Original: C:\laragon\www\Managemen Data Santri/LAPORAN_PEMERIKSAAN_LENGKAP.md
+Backup: C:\laragon\www\Managemen Data Santri/backup/docs/LAPORAN_PEMERIKSAAN_LENGKAP.md
+Size: 11.57 KB
+
+Type: doc
+Original: C:\laragon\www\Managemen Data Santri/PANDUAN_PERBAIKAN_LENGKAP.md
+Backup: C:\laragon\www\Managemen Data Santri/backup/docs/PANDUAN_PERBAIKAN_LENGKAP.md
+Size: 9.57 KB
+
+Type: doc
+Original: C:\laragon\www\Managemen Data Santri/PERBAIKAN_403_ERROR.md
+Backup: C:\laragon\www\Managemen Data Santri/backup/docs/PERBAIKAN_403_ERROR.md
+Size: 3.72 KB
+
+Type: doc
+Original: C:\laragon\www\Managemen Data Santri/PERBAIKAN_BUG_FINAL.md
+Backup: C:\laragon\www\Managemen Data Santri/backup/docs/PERBAIKAN_BUG_FINAL.md
+Size: 6.32 KB
+
+Type: doc
+Original: C:\laragon\www\Managemen Data Santri/PERBAIKAN_DASHBOARD_SANTRI_MENDALAM.md
+Backup: C:\laragon\www\Managemen Data Santri/backup/docs/PERBAIKAN_DASHBOARD_SANTRI_MENDALAM.md
+Size: 7.52 KB
+
+Type: doc
+Original: C:\laragon\www\Managemen Data Santri/PERBAIKAN_DATA_SANTRI_DASHBOARD.md
+Backup: C:\laragon\www\Managemen Data Santri/backup/docs/PERBAIKAN_DATA_SANTRI_DASHBOARD.md
+Size: 7.09 KB
+
+Type: doc
+Original: C:\laragon\www\Managemen Data Santri/PERBAIKAN_ERROR_419_SETELAH_LOGIN.md
+Backup: C:\laragon\www\Managemen Data Santri/backup/docs/PERBAIKAN_ERROR_419_SETELAH_LOGIN.md
+Size: 4.78 KB
+
+Type: doc
+Original: C:\laragon\www\Managemen Data Santri/PERBAIKAN_ERROR_REGEXP_SQLITE.md
+Backup: C:\laragon\www\Managemen Data Santri/backup/docs/PERBAIKAN_ERROR_REGEXP_SQLITE.md
+Size: 2.95 KB
+
+Type: doc
+Original: C:\laragon\www\Managemen Data Santri/PERBAIKAN_FINAL.md
+Backup: C:\laragon\www\Managemen Data Santri/backup/docs/PERBAIKAN_FINAL.md
+Size: 3.15 KB
+
+Type: doc
+Original: C:\laragon\www\Managemen Data Santri/PERBAIKAN_LOGIN_SANTRI.md
+Backup: C:\laragon\www\Managemen Data Santri/backup/docs/PERBAIKAN_LOGIN_SANTRI.md
+Size: 5.29 KB
+
+Type: doc
+Original: C:\laragon\www\Managemen Data Santri/PERBAIKAN_REDIRECT_KE_LOGIN.md
+Backup: C:\laragon\www\Managemen Data Santri/backup/docs/PERBAIKAN_REDIRECT_KE_LOGIN.md
+Size: 3.76 KB
+
+Type: doc
+Original: C:\laragon\www\Managemen Data Santri/PERBAIKAN_REDIRECT_LOOP.md
+Backup: C:\laragon\www\Managemen Data Santri/backup/docs/PERBAIKAN_REDIRECT_LOOP.md
+Size: 4.21 KB
+
+Type: doc
+Original: C:\laragon\www\Managemen Data Santri/PERBAIKAN_YANG_DILAKUKAN.md
+Backup: C:\laragon\www\Managemen Data Santri/backup/docs/PERBAIKAN_YANG_DILAKUKAN.md
+Size: 7.2 KB
+
+Type: doc
+Original: C:\laragon\www\Managemen Data Santri/PERBEDAAN_FAVICON_DAN_LOGO.md
+Backup: C:\laragon\www\Managemen Data Santri/backup/docs/PERBEDAAN_FAVICON_DAN_LOGO.md
+Size: 3.38 KB
+
+Type: doc
+Original: C:\laragon\www\Managemen Data Santri/RINGKASAN_PERBAIKAN.md
+Backup: C:\laragon\www\Managemen Data Santri/backup/docs/RINGKASAN_PERBAIKAN.md
+Size: 4.29 KB
+
+Type: doc
+Original: C:\laragon\www\Managemen Data Santri/RINGKASAN_PERBAIKAN_FINAL.md
+Backup: C:\laragon\www\Managemen Data Santri/backup/docs/RINGKASAN_PERBAIKAN_FINAL.md
+Size: 6.14 KB
+
+Type: doc
+Original: C:\laragon\www\Managemen Data Santri/SOLUSI_419_FINAL_FIX.md
+Backup: C:\laragon\www\Managemen Data Santri/backup/docs/SOLUSI_419_FINAL_FIX.md
+Size: 5.29 KB
+
+Type: doc
+Original: C:\laragon\www\Managemen Data Santri/SOLUSI_BROWSER_BLOKIR_COOKIE.md
+Backup: C:\laragon\www\Managemen Data Santri/backup/docs/SOLUSI_BROWSER_BLOKIR_COOKIE.md
+Size: 5.14 KB
+
+Type: doc
+Original: C:\laragon\www\Managemen Data Santri/SOLUSI_CEPAT_LOGIN.md
+Backup: C:\laragon\www\Managemen Data Santri/backup/docs/SOLUSI_CEPAT_LOGIN.md
+Size: 2.38 KB
+
+Type: doc
+Original: C:\laragon\www\Managemen Data Santri/SOLUSI_ERROR_419_FINAL.md
+Backup: C:\laragon\www\Managemen Data Santri/backup/docs/SOLUSI_ERROR_419_FINAL.md
+Size: 4.27 KB
+
+Type: doc
+Original: C:\laragon\www\Managemen Data Santri/STATUS_APLIKASI.md
+Backup: C:\laragon\www\Managemen Data Santri/backup/docs/STATUS_APLIKASI.md
+Size: 9.46 KB
+
+Type: doc
+Original: C:\laragon\www\Managemen Data Santri/STUDI_KASUS_TEMA_1_KYC_CONFIDENTIALITY.md
+Backup: C:\laragon\www\Managemen Data Santri/backup/docs/STUDI_KASUS_TEMA_1_KYC_CONFIDENTIALITY.md
+Size: 15.09 KB
+
+Type: doc
+Original: C:\laragon\www\Managemen Data Santri/TAMBAHAN_TAHUN_MASUK.md
+Backup: C:\laragon\www\Managemen Data Santri/backup/docs/TAMBAHAN_TAHUN_MASUK.md
+Size: 3.71 KB
+
+Type: doc
+Original: C:\laragon\www\Managemen Data Santri/TROUBLESHOOTING_403.md
+Backup: C:\laragon\www\Managemen Data Santri/backup/docs/TROUBLESHOOTING_403.md
+Size: 2.57 KB
+
+Type: doc
+Original: C:\laragon\www\Managemen Data Santri/VERIFIKASI_REDIRECT_LOGIN.md
+Backup: C:\laragon\www\Managemen Data Santri/backup/docs/VERIFIKASI_REDIRECT_LOGIN.md
+Size: 5.77 KB
+
+Type: doc
+Original: C:\laragon\www\Managemen Data Santri/VERIFIKASI_SANTRI_DASHBOARD.md
+Backup: C:\laragon\www\Managemen Data Santri/backup/docs/VERIFIKASI_SANTRI_DASHBOARD.md
+Size: 4.96 KB
+
+
+======================================================================
+Total File: 74
+Total Size: 400.49 KB
