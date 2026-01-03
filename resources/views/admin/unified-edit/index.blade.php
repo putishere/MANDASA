@@ -5,69 +5,73 @@
 @section('content')
 <style>
     .preview-section {
-        background: #f8f9fa;
-        border-radius: 10px;
-        padding: 20px;
-        margin-top: 20px;
-        border: 2px dashed #28a745;
+        background: var(--academic-green-light);
+        border-radius: var(--radius-md);
+        padding: var(--spacing-lg);
+        margin-top: var(--spacing-lg);
+        border: 2px dashed var(--academic-primary);
     }
     .preview-section h5 {
-        color: #28a745;
-        margin-bottom: 15px;
+        color: var(--academic-primary);
+        margin-bottom: var(--spacing-md);
+        font-family: 'Playfair Display', serif;
     }
     .tab-content {
         min-height: 400px;
     }
     .nav-tabs .nav-link {
-        color: #495057;
+        color: var(--academic-text);
         font-weight: 500;
         border: none;
         border-bottom: 3px solid transparent;
-        padding: 0.75rem 1.25rem;
-        transition: all 0.3s ease;
+        padding: var(--spacing-sm) var(--spacing-md);
+        transition: all 0.2s ease;
     }
     .nav-tabs .nav-link:hover {
-        border-bottom-color: #28a745;
-        color: #28a745;
+        border-bottom-color: var(--academic-primary);
+        color: var(--academic-primary);
     }
     .nav-tabs .nav-link.active {
-        color: #28a745;
+        color: var(--academic-primary);
         background-color: transparent;
-        border-bottom-color: #28a745;
+        border-bottom-color: var(--academic-primary);
         font-weight: 600;
     }
     .card {
-        border: none;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-        border-radius: 12px;
-        margin-bottom: 1.5rem;
+        border: 1px solid var(--academic-border);
+        box-shadow: var(--shadow-sm);
+        border-radius: var(--radius-md);
+        margin-bottom: var(--spacing-lg);
     }
     .card-header {
-        border-radius: 12px 12px 0 0 !important;
-        padding: 1rem 1.5rem;
+        border-radius: var(--radius-md) var(--radius-md) 0 0 !important;
+        padding: var(--spacing-md) var(--spacing-lg);
         font-weight: 600;
+        background-color: var(--academic-green-light);
+        border-bottom: 1px solid var(--academic-border);
     }
     .table th {
         font-weight: 600;
-        border-bottom: 2px solid #dee2e6;
+        border-bottom: 2px solid var(--academic-border);
         text-align: center;
         vertical-align: middle;
-        padding: 1rem 0.75rem;
-        background-color: #f8f9fa;
+        padding: var(--spacing-md) var(--spacing-sm);
+        background-color: var(--academic-green-light);
+        color: var(--academic-text);
     }
     .table td {
         vertical-align: middle;
-        padding: 1rem 0.75rem;
+        padding: var(--spacing-md) var(--spacing-sm);
     }
     .table tbody tr {
         transition: all 0.2s ease;
     }
     .table tbody tr:hover {
-        background-color: #f8f9fa;
+        background-color: var(--academic-green-light);
     }
     .btn-group-sm .btn {
-        padding: 0.25rem 0.5rem;
-        font-size: 0.875rem;
+        padding: 0.5rem 0.75rem;
+        font-size: var(--font-sm);
     }
     .table tbody td {
         vertical-align: middle;
@@ -100,10 +104,10 @@
         <div class="col-12">
                 <div class="card shadow-sm" style="background: linear-gradient(135deg, #28a745 0%, #20c997 50%, #17a2b8 100%); color: white; border-radius: 15px; box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3); border: none;">
                     <div class="card-body py-4">
-                        <h2 class="mb-2" style="font-size: clamp(1.25rem, 3vw, 1.75rem); font-weight: 700;">
+                        <h2 class="mb-2" style="font-size: var(--font-2xl); font-weight: 700;">
                         <i class="bi bi-pencil-square"></i> Edit Semua Fitur
                     </h2>
-                        <p class="mb-0 opacity-90" style="font-size: clamp(0.875rem, 2vw, 1rem);">Kelola semua fitur aplikasi dalam satu tempat: Profil Pondok, Data Santri, Album Pondok, Info Aplikasi, dan Pengaturan Tampilan</p>
+                        <p class="mb-0 opacity-90" style="font-size: var(--font-md);">Kelola semua fitur aplikasi dalam satu tempat: Profil Pondok, Data Santri, Album Pondok, Info Aplikasi, dan Pengaturan Tampilan</p>
                 </div>
             </div>
         </div>
@@ -153,6 +157,9 @@
     <form action="{{ route('admin.unified-edit.update') }}" method="POST" enctype="multipart/form-data" id="unified-edit-form">
         @csrf
         @method('PUT')
+        
+        <!-- Hidden input untuk AJAX -->
+        <input type="hidden" name="ajax" value="1" id="ajax-flag">
 
         <!-- Tabs Navigation -->
         <ul class="nav nav-tabs mb-4" id="editTabs" role="tablist">
@@ -209,30 +216,33 @@
                                 $profilFresh = $profilPondok->fresh();
                                 $logoExists = $profilFresh->logo && \Illuminate\Support\Facades\Storage::disk('public')->exists($profilFresh->logo);
                             @endphp
-                            @if($logoExists)
-                                <div class="mt-3">
-                                    <p class="mb-2"><strong>Logo saat ini:</strong></p>
-                                    <div class="border rounded p-3" style="background: #f8f9fa; display: inline-block;">
-                                        <img src="{{ asset('storage/' . $profilFresh->logo) }}?v={{ time() }}" alt="Logo Pondok" class="img-thumbnail" style="max-height: 120px; max-width: 200px; background: transparent;">
-                                    </div>
-                                    <div class="mt-2">
-                                        <a href="{{ asset('storage/' . $profilFresh->logo) }}" target="_blank" class="btn btn-sm btn-info">
-                                            <i class="bi bi-eye"></i> Lihat Logo Lengkap
-                                        </a>
-                                    </div>
-                                </div>
-                            @else
-                                @if($profilFresh->logo)
-                                    <div class="alert alert-warning mt-3">
-                                        <i class="bi bi-exclamation-triangle"></i> Logo tidak ditemukan di storage.
-                                        <br><small>Pastikan storage link sudah dibuat: <code>php artisan storage:link</code></small>
+                            <div id="logo-preview-container">
+                                @if($logoExists)
+                                    <div class="mt-3">
+                                        <p class="mb-2"><strong>Logo saat ini:</strong></p>
+                                        <div class="border rounded p-3" style="background: #f8f9fa; display: inline-block;">
+                                            <img src="{{ asset('storage/' . $profilFresh->logo) }}?v={{ time() }}" alt="Logo Pondok" class="img-thumbnail" id="current-logo-preview" style="max-height: 120px; max-width: 200px; background: transparent;">
+                                        </div>
+                                        <div class="mt-2">
+                                            <a href="{{ asset('storage/' . $profilFresh->logo) }}" target="_blank" class="btn btn-sm btn-info">
+                                                <i class="bi bi-eye"></i> Lihat Logo Lengkap
+                                            </a>
+                                        </div>
                                     </div>
                                 @else
-                                    <div class="alert alert-info mt-3">
-                                        <i class="bi bi-info-circle"></i> Belum ada logo yang diupload. Silakan upload logo pondok.
-                                    </div>
+                                    @if($profilFresh->logo)
+                                        <div class="alert alert-warning mt-3">
+                                            <i class="bi bi-exclamation-triangle"></i> Logo tidak ditemukan di storage.
+                                            <br><small>Path: {{ $profilFresh->logo }}</small>
+                                            <br><small>Pastikan storage link sudah dibuat: <code>php artisan storage:link</code></small>
+                                        </div>
+                                    @else
+                                        <div class="alert alert-info mt-3">
+                                            <i class="bi bi-info-circle"></i> Belum ada logo yang diupload. Silakan upload logo pondok.
+                                        </div>
+                                    @endif
                                 @endif
-                            @endif
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -286,35 +296,38 @@
                     <h5><i class="bi bi-eye"></i> Preview Profil Pondok (Hasil Edit Langsung Tampil)</h5>
                     <div class="card">
                         <div class="card-body">
-                            <h3 class="text-success">{{ $profilPondok->fresh()->nama_pondok ?? 'PP HS AL-FAKKAR' }}</h3>
-                            <p class="text-muted">{{ $profilPondok->fresh()->subtitle ?? 'Pondok Pesantren HS Al-Fakkar' }}</p>
+                            <h3 class="text-success" id="preview-nama-pondok">{{ $profilPondok->fresh()->nama_pondok ?? 'PP HS AL-FAKKAR' }}</h3>
+                            <p class="text-muted" id="preview-subtitle">{{ $profilPondok->fresh()->subtitle ?? 'Pondok Pesantren HS Al-Fakkar' }}</p>
                             @php
                                 $profilFresh = $profilPondok->fresh();
                             @endphp
                             @php
                                 $logoExistsPreview = $profilFresh->logo && \Illuminate\Support\Facades\Storage::disk('public')->exists($profilFresh->logo);
                             @endphp
-                            @if($logoExistsPreview)
-                                <div class="mt-2 mb-2">
-                                    <div class="border rounded p-3" style="background: #f8f9fa; display: inline-block;">
-                                        <img src="{{ asset('storage/' . $profilFresh->logo) }}?v={{ time() }}" alt="Logo" class="img-thumbnail" style="max-height: 120px; max-width: 200px; background: transparent;">
-                                    </div>
-                                    <p class="text-muted small mb-0 mt-2">
-                                        <i class="bi bi-check-circle text-success"></i> Logo berhasil diupload
-                                    </p>
-                                </div>
-                            @else
-                                @if($profilFresh->logo)
-                                    <div class="alert alert-warning mt-2">
-                                        <i class="bi bi-exclamation-triangle"></i> Logo tidak ditemukan di storage.
-                                        <br><small>Pastikan storage link sudah dibuat: <code>php artisan storage:link</code></small>
+                            <div id="preview-logo-container">
+                                @if($logoExistsPreview)
+                                    <div class="mt-2 mb-2">
+                                        <div class="border rounded p-3" style="background: #f8f9fa; display: inline-block;">
+                                            <img src="{{ asset('storage/' . $profilFresh->logo) }}?v={{ time() }}" alt="Logo" class="img-thumbnail" id="preview-logo-img" style="max-height: 120px; max-width: 150px; width: auto; height: auto; background: transparent; object-fit: contain;">
+                                        </div>
+                                        <p class="text-muted small mb-0 mt-2">
+                                            <i class="bi bi-check-circle text-success"></i> Logo berhasil diupload
+                                        </p>
                                     </div>
                                 @else
-                                    <div class="alert alert-info mt-2">
-                                        <i class="bi bi-info-circle"></i> Belum ada logo yang diupload.
-                                    </div>
+                                    @if($profilFresh->logo)
+                                        <div class="alert alert-warning mt-2">
+                                            <i class="bi bi-exclamation-triangle"></i> Logo tidak ditemukan di storage.
+                                            <br><small>Path: {{ $profilFresh->logo }}</small>
+                                            <br><small>Pastikan storage link sudah dibuat: <code>php artisan storage:link</code></small>
+                                        </div>
+                                    @else
+                                        <div class="alert alert-info mt-2">
+                                            <i class="bi bi-info-circle"></i> Belum ada logo yang diupload.
+                                        </div>
+                                    @endif
                                 @endif
-                            @endif
+                            </div>
                             @if($profilFresh->tentang)
                                 <div class="mt-3">
                                     <strong>Tentang:</strong>
@@ -842,10 +855,183 @@
         });
     });
 
-    // Form validation before submit
+    // Real-time preview update saat user mengetik
+    document.getElementById('profil_pondok_nama_pondok')?.addEventListener('input', function(e) {
+        document.getElementById('preview-nama-pondok').textContent = e.target.value || 'PP HS AL-FAKKAR';
+    });
+    
+    document.getElementById('profil_pondok_subtitle')?.addEventListener('input', function(e) {
+        document.getElementById('preview-subtitle').textContent = e.target.value || 'Pondok Pesantren HS Al-Fakkar';
+    });
+    
+    // Preview logo sebelum upload
+    document.getElementById('profil_pondok_logo')?.addEventListener('change', function(e) {
+        const file = e.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                // Update preview di form
+                const previewContainer = document.getElementById('logo-preview-container');
+                if (previewContainer) {
+                    previewContainer.innerHTML = `
+                        <div class="mt-3">
+                            <p class="mb-2"><strong>Logo baru:</strong></p>
+                            <div class="border rounded p-3" style="background: #f8f9fa; display: inline-block;">
+                                <img src="${e.target.result}" alt="Logo Preview" class="img-thumbnail" style="max-height: 120px; max-width: 200px; background: transparent;">
+                            </div>
+                        </div>
+                    `;
+                }
+                
+                // Update preview di preview section
+                const previewLogoContainer = document.getElementById('preview-logo-container');
+                if (previewLogoContainer) {
+                    previewLogoContainer.innerHTML = `
+                        <div class="mt-2 mb-2">
+                            <div class="border rounded p-3" style="background: #f8f9fa; display: inline-block;">
+                                <img src="${e.target.result}" alt="Logo" class="img-thumbnail" style="max-height: 120px; max-width: 200px; background: transparent;">
+                            </div>
+                            <p class="text-muted small mb-0 mt-2">
+                                <i class="bi bi-check-circle text-success"></i> Logo baru siap diupload
+                            </p>
+                        </div>
+                    `;
+                }
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+    
+    // Form submit dengan AJAX untuk update langsung
     document.getElementById('unified-edit-form').addEventListener('submit', function(e) {
-        // Form akan submit normal dengan method PUT
-        // Setelah redirect, preview akan otomatis update dengan data terbaru
+        e.preventDefault();
+        
+        const form = this;
+        const formData = new FormData(form);
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalBtnText = submitBtn.innerHTML;
+        
+        // Disable button dan show loading
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="bi bi-hourglass-split"></i> Menyimpan...';
+        
+        // Submit dengan fetch API
+        fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'X-Requested-With': 'XMLHttpRequest',
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                // Update preview sections dengan data baru
+                if (data.data) {
+                    // Update profil pondok preview
+                    if (data.data.profil_pondok) {
+                        const pp = data.data.profil_pondok;
+                        document.getElementById('preview-nama-pondok').textContent = pp.nama_pondok || 'PP HS AL-FAKKAR';
+                        document.getElementById('preview-subtitle').textContent = pp.subtitle || 'Pondok Pesantren HS Al-Fakkar';
+                        
+                        // Update logo jika ada
+                        if (pp.logo) {
+                            const logoUrl = pp.logo_url || ('/storage/' + pp.logo + '?v=' + new Date().getTime());
+                            const previewLogoContainer = document.getElementById('preview-logo-container');
+                            if (previewLogoContainer) {
+                                previewLogoContainer.innerHTML = `
+                                    <div class="mt-2 mb-2">
+                                        <div class="border rounded p-3" style="background: #f8f9fa; display: inline-block;">
+                                            <img src="${logoUrl}" alt="Logo" class="img-thumbnail" style="max-height: 120px; max-width: 200px; background: transparent;">
+                                        </div>
+                                        <p class="text-muted small mb-0 mt-2">
+                                            <i class="bi bi-check-circle text-success"></i> Logo berhasil diupload
+                                        </p>
+                                    </div>
+                                `;
+                            }
+                            
+                            // Update current logo preview
+                            const currentLogoPreview = document.getElementById('current-logo-preview');
+                            if (currentLogoPreview) {
+                                currentLogoPreview.src = logoUrl;
+                            }
+                            
+                            // Update logo preview container di form
+                            const logoPreviewContainer = document.getElementById('logo-preview-container');
+                            if (logoPreviewContainer) {
+                                logoPreviewContainer.innerHTML = `
+                                    <div class="mt-3">
+                                        <p class="mb-2"><strong>Logo saat ini:</strong></p>
+                                        <div class="border rounded p-3" style="background: #f8f9fa; display: inline-block;">
+                                            <img src="${logoUrl}" alt="Logo Pondok" class="img-thumbnail" id="current-logo-preview" style="max-height: 120px; max-width: 200px; background: transparent;">
+                                        </div>
+                                        <div class="mt-2">
+                                            <a href="${logoUrl}" target="_blank" class="btn btn-sm btn-info">
+                                                <i class="bi bi-eye"></i> Lihat Logo Lengkap
+                                            </a>
+                                        </div>
+                                    </div>
+                                `;
+                            }
+                        }
+                    }
+                    
+                    // Update form values dengan data baru
+                    if (data.data.profil_pondok) {
+                        const pp = data.data.profil_pondok;
+                        document.getElementById('profil_pondok_nama_pondok').value = pp.nama_pondok || '';
+                        document.getElementById('profil_pondok_subtitle').value = pp.subtitle || '';
+                    }
+                }
+                
+                // Show success message
+                const successAlert = document.createElement('div');
+                successAlert.className = 'alert alert-success alert-dismissible fade show';
+                successAlert.innerHTML = `
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-check-circle-fill me-2" style="font-size: 1.5rem;"></i>
+                        <div class="flex-grow-1">
+                            <strong>Berhasil!</strong> ${data.message || 'Perubahan berhasil disimpan dan langsung tampil!'}
+                        </div>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    </div>
+                `;
+                form.insertBefore(successAlert, form.firstChild);
+                
+                // Scroll to preview
+                setTimeout(() => {
+                    const activeTab = document.querySelector('.nav-link.active');
+                    if (activeTab) {
+                        const targetId = activeTab.getAttribute('data-bs-target');
+                        if (targetId) {
+                            const tabPane = document.querySelector(targetId);
+                            if (tabPane) {
+                                const previewSection = tabPane.querySelector('.preview-section');
+                                if (previewSection) {
+                                    previewSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                                }
+                            }
+                        }
+                    }
+                }, 300);
+                
+                // Auto remove alert after 5 seconds
+                setTimeout(() => {
+                    successAlert.remove();
+                }, 5000);
+            } else {
+                alert('Error: ' + (data.message || 'Terjadi kesalahan saat menyimpan'));
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Terjadi kesalahan: ' + error.message);
+        })
+        .finally(() => {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnText;
+        });
     });
 </script>
 

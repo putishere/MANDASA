@@ -6,6 +6,302 @@
 @source '../**/*.js';
 
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+/* Academic Color Scheme - Green Theme (Harmonis & Modern) */
+:root {
+    --academic-primary: #059669;
+    --academic-secondary: #d1fae5;
+    --academic-accent: #10b981;
+    --academic-text: #1f2937;
+    --academic-border: #a7f3d0;
+    --academic-success: #10b981;
+    --academic-warning: #d97706;
+    --academic-green-dark: #047857;
+    --academic-green-light: #d1fae5;
+    --academic-green-medium: #34d399;
+    --academic-green-very-light: #ecfdf5;
+    
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 0.75rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-2xl: 3rem;
+    
+    /* Font Sizes */
+    --font-xs: 0.75rem;
+    --font-sm: 0.875rem;
+    --font-md: 1rem;
+    --font-lg: 1.125rem;
+    --font-xl: 1.25rem;
+    --font-2xl: 1.5rem;
+    --font-3xl: 1.875rem;
+    --font-4xl: 2.25rem;
+    
+    /* Heading Sizes */
+    --heading-h1: 2rem;
+    --heading-h2: 1.75rem;
+    --heading-h3: 1.5rem;
+    --heading-h4: 1.25rem;
+    --heading-h5: 1.125rem;
+    --heading-h6: 1rem;
+    
+    /* Border Radius */
+    --radius-sm: 6px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 3px rgba(21, 87, 36, 0.08);
+    --shadow-md: 0 2px 8px rgba(21, 87, 36, 0.15);
+    --shadow-lg: 0 4px 12px rgba(21, 87, 36, 0.2);
+}
+
+/* Academic Typography */
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: var(--academic-text);
+    line-height: 1.6;
+}
+
+h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 600;
+    font-size: var(--heading-h1);
+    color: var(--academic-text);
+    line-height: 1.3;
+    margin-bottom: var(--spacing-md);
+}
+
+h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 600;
+    font-size: var(--heading-h2);
+    color: var(--academic-text);
+    line-height: 1.3;
+    margin-bottom: var(--spacing-md);
+}
+
+h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 600;
+    font-size: var(--heading-h3);
+    color: var(--academic-text);
+    line-height: 1.3;
+    margin-bottom: var(--spacing-sm);
+}
+
+h4 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 600;
+    font-size: var(--heading-h4);
+    color: var(--academic-text);
+    line-height: 1.3;
+    margin-bottom: var(--spacing-sm);
+}
+
+h5 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 600;
+    font-size: var(--heading-h5);
+    color: var(--academic-text);
+    line-height: 1.3;
+    margin-bottom: var(--spacing-xs);
+}
+
+h6 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 600;
+    font-size: var(--heading-h6);
+    color: var(--academic-text);
+    line-height: 1.3;
+    margin-bottom: var(--spacing-xs);
+}
+
+/* Academic Button Styles */
+.btn-primary,
+.btn-success {
+    background-color: var(--academic-primary);
+    border-color: var(--academic-primary);
+    color: white;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    font-size: var(--font-md);
+    padding: 0.625rem 1.25rem;
+    transition: all 0.2s ease;
+}
+
+.btn-sm {
+    font-size: var(--font-sm);
+    padding: 0.5rem 1rem;
+}
+
+.btn-lg {
+    font-size: var(--font-lg);
+    padding: 0.75rem 1.5rem;
+}
+
+.btn-primary:hover,
+.btn-success:hover {
+    background-color: var(--academic-accent);
+    border-color: var(--academic-accent);
+    box-shadow: var(--shadow-md);
+}
+
+/* Academic Card Styles */
+.card {
+    border: 1px solid var(--academic-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    transition: all 0.2s ease;
+}
+
+.card:hover {
+    box-shadow: var(--shadow-md);
+}
+
+.card-header {
+    background-color: var(--academic-green-very-light);
+    border-bottom: 1px solid var(--academic-border);
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+    padding: var(--spacing-md) var(--spacing-lg);
+    font-weight: 600;
+    color: var(--academic-text);
+}
+
+.card-body {
+    padding: var(--spacing-lg);
+}
+
+/* Academic Alert Styles */
+.alert-success {
+    background-color: var(--academic-green-very-light);
+    border-color: var(--academic-success);
+    border-left-width: 4px;
+    color: #047857;
+    border-radius: var(--radius-sm);
+    padding: var(--spacing-md) var(--spacing-lg);
+}
+
+.alert-danger {
+    background-color: #fef2f2;
+    border-color: #dc2626;
+    border-left-width: 4px;
+    color: #991b1b;
+    border-radius: var(--radius-sm);
+    padding: var(--spacing-md) var(--spacing-lg);
+}
+
+/* Academic Table Styles */
+.table {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.table thead th {
+    background-color: var(--academic-primary);
+    color: white;
+    font-weight: 600;
+    padding: var(--spacing-md) var(--spacing-sm);
+    border: none;
+    font-family: 'Inter', sans-serif;
+    text-transform: uppercase;
+    font-size: var(--font-sm);
+    letter-spacing: 0.5px;
+}
+
+.table tbody td {
+    padding: var(--spacing-md) var(--spacing-sm);
+    border-bottom: 1px solid var(--academic-border);
+    vertical-align: middle;
+    font-size: var(--font-md);
+}
+
+.table tbody tr:hover {
+    background-color: var(--academic-green-light);
+}
+
+/* Academic Form Styles */
+.form-control,
+.form-select {
+    border: 1px solid var(--academic-border);
+    border-radius: var(--radius-sm);
+    padding: 0.625rem 0.875rem;
+    transition: all 0.2s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--academic-primary);
+    box-shadow: 0 0 0 0.2rem rgba(21, 87, 36, 0.1);
+    outline: none;
+}
+
+.form-label {
+    font-weight: 600;
+    color: var(--academic-text);
+    margin-bottom: var(--spacing-xs);
+    font-size: var(--font-sm);
+}
+
+/* Academic Page Header */
+.page-header {
+    background: var(--academic-primary);
+    color: white;
+    padding: var(--spacing-lg) var(--spacing-xl);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-xl);
+    box-shadow: var(--shadow-md);
+}
+
+.page-header h1,
+.page-header h2 {
+    color: white;
+    margin-bottom: 0;
+    font-family: 'Playfair Display', serif;
+}
+
+/* Academic Section Card */
+.section-card {
+    background: #ffffff;
+    border-left: 4px solid var(--academic-primary);
+    border: 1px solid var(--academic-border);
+    border-left-width: 4px;
+    border-radius: var(--radius-md);
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+    transition: all 0.2s ease;
+}
+
+.section-card:hover {
+    box-shadow: var(--shadow-md);
+}
+
+/* Utility Classes */
+.academic-shadow-sm {
+    box-shadow: var(--shadow-sm);
+}
+
+.academic-shadow-md {
+    box-shadow: var(--shadow-md);
+}
+
+.academic-shadow-lg {
+    box-shadow: var(--shadow-lg);
+}
+
+.academic-border-radius {
+    border-radius: var(--radius-md);
+}
+
+.academic-text-primary {
+    color: var(--academic-primary);
+}
+
+.academic-bg-light {
+    background-color: var(--academic-green-light);
 }

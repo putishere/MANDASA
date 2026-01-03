@@ -5,73 +5,99 @@
 @section('content')
 <style>
     .pondok-header {
-        background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+        background: var(--academic-primary);
         color: white;
-        padding: 2.5rem 1.5rem;
-        border-radius: 15px 15px 0 0;
+        padding: 2rem 1.5rem;
+        border-radius: var(--radius-md) var(--radius-md) 0 0;
         text-align: center;
-        box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+        box-shadow: var(--shadow-md);
+    }
+    .pondok-header .logo-wrapper {
+        margin-bottom: 1rem;
+    }
+    .pondok-header .logo-wrapper img {
+        max-width: 120px;
+        max-height: 120px;
+        width: auto;
+        height: auto;
+        background: white;
+        border-radius: 50%;
+        padding: 8px;
+        border: 3px solid rgba(255, 255, 255, 0.3);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     }
     .pondok-header h1 {
-        font-size: 2.5rem;
-        font-weight: 700;
+        font-size: var(--font-2xl);
+        font-weight: 600;
+        font-family: 'Playfair Display', serif;
         margin-bottom: 0.5rem;
-        text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        color: white;
     }
     .pondok-header h3 {
-        font-size: 1.3rem;
+        font-size: var(--font-md);
         font-weight: 400;
         opacity: 0.95;
         margin: 0;
+        color: white;
     }
     .pondok-card {
         background: white;
-        border-radius: 15px;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        border-radius: var(--radius-md);
+        box-shadow: var(--shadow-md);
         overflow: hidden;
+        border: 1px solid var(--academic-border);
+        margin-bottom: 2rem;
     }
     .logo-container {
         text-align: center;
-        padding: 2rem 1.5rem;
-        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        padding: 1.5rem 1rem;
+        background: var(--academic-green-very-light);
         margin: 1.5rem;
-        border-radius: 12px;
+        border-radius: var(--radius-md);
+        border: 1px solid var(--academic-border);
     }
     .logo-container img {
-        max-width: clamp(200px, 40vw, 300px);
+        max-width: clamp(120px, 25vw, 180px);
+        max-height: 180px;
+        width: auto;
         height: auto;
         background: transparent;
+        object-fit: contain;
+        border-radius: var(--radius-sm);
     }
     .section-card {
-        background: #f8f9fa;
-        border-left: 4px solid #28a745;
-        border-radius: 8px;
-        padding: 1.5rem;
-        margin-bottom: 1.5rem;
-        transition: all 0.3s ease;
+        background: #ffffff;
+        border-left: 4px solid var(--academic-primary);
+        border: 1px solid var(--academic-border);
+        border-left-width: 4px;
+        border-radius: var(--radius-md);
+        padding: var(--spacing-lg);
+        margin-bottom: var(--spacing-lg);
+        transition: all 0.2s ease;
     }
     .section-card:hover {
-        background: #f0f7f4;
-        box-shadow: 0 2px 8px rgba(40, 167, 69, 0.15);
-        transform: translateY(-2px);
+        box-shadow: var(--shadow-md);
+        border-left-color: var(--academic-accent);
     }
     .section-card h4 {
-        color: #28a745;
+        color: var(--academic-primary);
         font-weight: 600;
-        font-size: 1.25rem;
-        margin-bottom: 1rem;
+        font-family: 'Playfair Display', serif;
+        font-size: var(--font-xl);
+        margin-bottom: var(--spacing-md);
         display: flex;
         align-items: center;
         gap: 0.5rem;
     }
     .section-card h4 i {
-        font-size: 1.4rem;
+        font-size: var(--font-xl);
     }
     .section-card h5 {
-        color: #28a745;
+        color: var(--academic-primary);
         font-weight: 600;
-        font-size: 1.1rem;
-        margin-bottom: 0.75rem;
+        font-family: 'Playfair Display', serif;
+        font-size: var(--font-lg);
+        margin-bottom: var(--spacing-sm);
         display: flex;
         align-items: center;
         gap: 0.5rem;
@@ -94,7 +120,7 @@
         margin-bottom: 0.5rem;
     }
     .logo-placeholder {
-        background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+        background: var(--academic-secondary);
         border-radius: 50%;
         width: 150px;
         height: 150px;
@@ -105,7 +131,7 @@
     }
     .logo-placeholder i {
         font-size: 80px;
-        color: #28a745;
+        color: var(--academic-primary);
     }
     @media (max-width: 768px) {
         .pondok-header {
@@ -122,39 +148,43 @@
         }
         .logo-container {
             margin: 1rem;
-            padding: 1.5rem 1rem;
+            padding: 1rem;
+        }
+        .logo-container img {
+            max-width: clamp(100px, 20vw, 150px) !important;
+            max-height: 150px !important;
         }
     }
 </style>
 
 <div class="container">
     <div class="mb-4">
-        <div class="page-header" style="background: linear-gradient(135deg, #28a745 0%, #20c997 100%); color: white; padding: clamp(1rem, 2vw, 1.5rem); border-radius: 15px; box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);">
-            <h2 style="font-size: clamp(1.25rem, 3vw, 1.75rem); margin: 0; font-weight: 600;">
+        <div class="page-header" style="background: var(--academic-primary); color: white; padding: 1.25rem 1.5rem; border-radius: var(--radius-md); box-shadow: var(--shadow-md);">
+            <h2 style="font-size: var(--font-xl); margin: 0; font-weight: 600; font-family: 'Playfair Display', serif;">
                 <i class="bi bi-building"></i> Profil Pondok Pesantren
             </h2>
         </div>
     </div>
 
-    <div class="card pondok-card shadow-lg">
+    <div class="card pondok-card">
         <div class="pondok-header">
+            @php
+                $profilFresh = $profil->fresh();
+                $logoExists = $profilFresh->logo && \Illuminate\Support\Facades\Storage::disk('public')->exists($profilFresh->logo);
+            @endphp
+            @if($logoExists)
+                <div class="logo-wrapper">
+                    <img src="{{ asset('storage/' . $profilFresh->logo) }}?v={{ time() }}" alt="Logo {{ $profilFresh->nama_pondok }}">
+                </div>
+            @endif
             <h1>{{ $profil->nama_pondok ?? 'PP HS AL-FAKKAR' }}</h1>
             <h3>{{ $profil->subtitle ?? 'Pondok Pesantren HS Al-Fakkar' }}</h3>
         </div>
 
         <div class="card-body p-4">
-            <!-- Logo Pondok -->
-            <div class="logo-container">
-                @php
-                    $profilFresh = $profil->fresh();
-                    $logoExists = $profilFresh->logo && \Illuminate\Support\Facades\Storage::disk('public')->exists($profilFresh->logo);
-                @endphp
-                @if($logoExists)
-                    <img src="{{ asset('storage/' . $profilFresh->logo) }}?v={{ time() }}" alt="Logo {{ $profilFresh->nama_pondok }}" class="img-fluid" style="background: transparent; max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-                    <p class="text-success mt-3 mb-0">
-                        <i class="bi bi-check-circle"></i> Logo Pondok
-                    </p>
-                @else
+            <!-- Logo Pondok (jika tidak di header) -->
+            @if(!$logoExists)
+                <div class="logo-container">
                     <div class="logo-placeholder">
                         <i class="bi bi-building"></i>
                     </div>
@@ -166,8 +196,8 @@
                             <br><small>Pastikan storage link sudah dibuat: <code>php artisan storage:link</code></small>
                         </div>
                     @endif
-                @endif
-            </div>
+                </div>
+            @endif
 
             <!-- Artikel Tentang Pondok -->
             @if($profil->tentang)

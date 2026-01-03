@@ -5,11 +5,12 @@
 @section('content')
 <style>
     .info-header {
-        background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+        background: var(--academic-primary);
         color: white;
-        padding: 2.5rem 1.5rem;
-        border-radius: 15px 15px 0 0;
+        padding: var(--spacing-xl) var(--spacing-lg);
+        border-radius: var(--radius-md) var(--radius-md) 0 0;
         text-align: center;
+        box-shadow: var(--shadow-md);
     }
     .info-header i {
         font-size: 4rem;
@@ -28,31 +29,34 @@
     }
     .info-card {
         background: white;
-        border-radius: 15px;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        border-radius: var(--radius-md);
+        box-shadow: var(--shadow-sm);
         overflow: hidden;
+        border: 1px solid var(--academic-border);
     }
     .info-section-card {
-        background: #f8f9fa;
-        border-left: 4px solid #28a745;
-        border-radius: 8px;
-        padding: 1.5rem;
+        background: var(--academic-green-light);
+        border-left: 4px solid var(--academic-primary);
+        border-radius: var(--radius-md);
+        padding: var(--spacing-lg);
         height: 100%;
-        transition: all 0.3s ease;
+        transition: all 0.2s ease;
+        border: 1px solid var(--academic-border);
+        border-left-width: 4px;
     }
     .info-section-card:hover {
-        background: #f0f7f4;
-        box-shadow: 0 2px 8px rgba(40, 167, 69, 0.15);
-        transform: translateY(-2px);
+        background: #ffffff;
+        box-shadow: var(--shadow-md);
     }
     .info-section-card h5 {
-        color: #28a745;
+        color: var(--academic-primary);
         font-weight: 600;
         font-size: 1.1rem;
-        margin-bottom: 1rem;
+        margin-bottom: var(--spacing-md);
         display: flex;
         align-items: center;
         gap: 0.5rem;
+        font-family: 'Playfair Display', serif;
     }
     .info-section-card h5 i {
         font-size: 1.3rem;
@@ -64,18 +68,20 @@
         font-size: 0.95rem;
     }
     .tech-info-card {
-        background: linear-gradient(135deg, #e8f5e9 0%, #f1f8e9 100%);
-        border-radius: 8px;
-        padding: 1.5rem;
-        margin-top: 1.5rem;
+        background: var(--academic-green-light);
+        border-radius: var(--radius-md);
+        padding: var(--spacing-lg);
+        margin-top: var(--spacing-lg);
+        border: 1px solid var(--academic-border);
     }
     .tech-info-card h5 {
-        color: #28a745;
+        color: var(--academic-primary);
         font-weight: 600;
-        margin-bottom: 1rem;
+        margin-bottom: var(--spacing-md);
         display: flex;
         align-items: center;
         gap: 0.5rem;
+        font-family: 'Playfair Display', serif;
     }
     .tech-info-item {
         padding: 0.5rem 0;
@@ -85,7 +91,7 @@
         border-bottom: none;
     }
     .tech-info-item strong {
-        color: #28a745;
+        color: var(--academic-primary);
         min-width: 120px;
         display: inline-block;
     }

@@ -28,8 +28,8 @@ class AppServiceProvider extends ServiceProvider
                 $appName = AppSetting::where('key', 'app_name')->value('value') ?? 'MANAGEMEN DATA SANTRI';
                 $appSubtitle = AppSetting::where('key', 'app_subtitle')->value('value') ?? AppSetting::where('key', 'app_title')->value('value') ?? 'PP HS AL-FAKKAR';
                 $appLogo = AppSetting::where('key', 'app_logo')->value('value');
-                $primaryColor = AppSetting::where('key', 'primary_color')->value('value') ?? '#28a745';
-                $secondaryColor = AppSetting::where('key', 'secondary_color')->value('value') ?? '#d4edda';
+                $primaryColor = AppSetting::where('key', 'primary_color')->value('value') ?? '#059669';
+                $secondaryColor = AppSetting::where('key', 'secondary_color')->value('value') ?? '#d1fae5';
                 $footerText = AppSetting::where('key', 'footer_text')->value('value') ?? '© ' . date('Y') . ' PP HS Al-Fakkar. All rights reserved.';
                 
                 $view->with([
@@ -46,8 +46,8 @@ class AppServiceProvider extends ServiceProvider
                     'appName' => 'MANAGEMEN DATA SANTRI',
                     'appSubtitle' => 'PP HS AL-FAKKAR',
                     'appLogo' => null,
-                    'primaryColor' => '#28a745',
-                    'secondaryColor' => '#d4edda',
+                    'primaryColor' => '#059669',
+                    'secondaryColor' => '#d1fae5',
                     'footerText' => '© ' . date('Y') . ' PP HS Al-Fakkar. All rights reserved.',
                 ]);
             }

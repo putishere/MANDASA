@@ -22,3 +22,12 @@
 Homestead.json
 Homestead.yaml
 Thumbs.db
+
+# Backup files
+/backup/
+*.backup
+*.bak
+
+# Temporary files
+*.tmp
+*.temp

@@ -5,26 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Login - Managemen Data Santri</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <style>
+        :root {
+            --academic-primary: #059669;
+            --academic-secondary: #d1fae5;
+            --academic-accent: #10b981;
+            --academic-text: #1f2937;
+            --academic-border: #a7f3d0;
+            --academic-success: #10b981;
+            --academic-warning: #d97706;
+            --academic-green-dark: #047857;
+            --academic-green-light: #d1fae5;
+            --academic-green-medium: #34d399;
+            --academic-green-very-light: #ecfdf5;
+        }
         body {
             background: #ffffff;
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
         .login-container {
-            max-width: 400px;
+            max-width: 420px;
             width: 100%;
-            padding: 1rem 1.25rem;
-            border: 3px solid #28a745;
-            border-radius: 15px;
+            padding: 1.5rem;
+            border: 2px solid var(--academic-primary);
+            border-radius: var(--radius-md);
             background: #ffffff;
-            box-shadow: 0 4px 20px rgba(40, 167, 69, 0.15);
+            box-shadow: var(--shadow-md);
         }
         @media (max-width: 575.98px) {
             .login-container {
@@ -36,66 +52,65 @@
             }
         }
         .login-icon {
-            font-size: 3.5rem;
-            color: #28a745;
-            margin-bottom: 0.75rem;
+            font-size: 3rem;
+            color: var(--academic-primary);
+            margin-bottom: var(--spacing-md);
             text-align: center;
         }
         .login-title {
-            font-size: clamp(1.3rem, 4vw, 1.6rem);
-            font-weight: bold;
-            color: #28a745;
+            font-size: var(--font-2xl);
+            font-weight: 600;
+            font-family: 'Playfair Display', serif;
+            color: var(--academic-primary);
             text-align: center;
             margin-bottom: 0.25rem;
             text-transform: uppercase;
         }
         .login-subtitle {
-            font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+            font-size: var(--font-md);
             font-weight: 600;
-            color: #28a745;
+            color: var(--academic-text);
             text-align: center;
-            margin-bottom: 1.25rem;
+            margin-bottom: var(--spacing-lg);
         }
         .login-card {
             background: white;
-            border: 2px solid #28a745;
-            border-radius: 12px;
-            padding: 1.5rem;
-            box-shadow: 0 2px 15px rgba(40, 167, 69, 0.1);
+            border: 1px solid var(--academic-border);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-lg);
+            box-shadow: var(--shadow-sm);
         }
         .form-label {
-            font-weight: 500;
-            color: #333;
-            margin-bottom: 0.4rem;
-            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--academic-text);
+            margin-bottom: var(--spacing-xs);
+            font-size: var(--font-sm);
         }
         .form-control {
-            border: 1px solid #ddd;
-            border-radius: 6px;
-            padding: 0.6rem 0.875rem;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
+            border: 1px solid var(--academic-border);
+            border-radius: var(--radius-sm);
+            padding: 0.625rem 0.875rem;
+            font-size: var(--font-md);
+            transition: all 0.2s ease;
         }
         .form-control:focus {
-            border-color: #28a745;
-            box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.15);
+            border-color: var(--academic-primary);
+            box-shadow: 0 0 0 0.2rem rgba(30, 58, 138, 0.1);
         }
         .btn-login {
-            background: #28a745;
+            background: var(--academic-primary);
             color: white;
-            border: none;
-            border-radius: 25px;
-            padding: 0.7rem 1.5rem;
-            font-size: 0.95rem;
+            border: 1px solid var(--academic-primary);
+            border-radius: var(--radius-sm);
+            padding: 0.75rem 1.5rem;
+            font-size: var(--font-md);
             font-weight: 600;
             width: 100%;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+            transition: all 0.2s ease;
         }
         .btn-login:hover {
-            background: #218838;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(40, 167, 69, 0.4);
+            background: var(--academic-accent);
+            border-color: var(--academic-accent);
         }
         .alert {
             border-radius: 8px;
@@ -140,7 +155,7 @@
             font-size: 0.9rem;
         }
         .password-toggle:hover {
-            color: #28a745;
+            color: var(--academic-primary);
         }
         .password-wrapper {
             position: relative;

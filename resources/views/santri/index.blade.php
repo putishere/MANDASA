@@ -5,40 +5,18 @@
 @section('content')
 <style>
     .page-header {
-        background: linear-gradient(135deg, #1e7e34 0%, #28a745 50%, #20c997 100%);
+        background: var(--academic-primary);
         color: white;
         padding: clamp(1.25rem, 2.5vw, 2rem);
-        border-radius: 15px;
-        margin-bottom: 2rem;
-        box-shadow: 0 6px 20px rgba(40, 167, 69, 0.35);
-        position: relative;
-        overflow: hidden;
-    }
-    .page-header::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: repeating-linear-gradient(
-            45deg,
-            transparent,
-            transparent 10px,
-            rgba(255, 255, 255, 0.03) 10px,
-            rgba(255, 255, 255, 0.03) 20px
-        );
-        pointer-events: none;
-    }
-    .page-header > * {
-        position: relative;
-        z-index: 1;
+        border-radius: var(--radius-md);
+        margin-bottom: var(--spacing-xl);
+        box-shadow: var(--shadow-md);
     }
     .page-header h2 {
         font-size: clamp(1.5rem, 3.5vw, 2rem);
         margin: 0 0 0.5rem 0;
-        font-weight: 700;
-        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        font-weight: 600;
+        font-family: 'Playfair Display', serif;
         letter-spacing: 0.5px;
     }
     .page-header h2 i {
@@ -146,9 +124,9 @@
         border-radius: 10px;
         white-space: nowrap;
         background: white;
-        color: #28a745;
+        color: var(--academic-primary);
         border: 2px solid transparent;
-        font-weight: 700;
+        font-weight: 600;
         transition: all 0.3s ease;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     }
@@ -170,15 +148,16 @@
         font-weight: 500;
     }
     .table-responsive {
-        border-radius: 15px;
+        border-radius: var(--radius-md);
         overflow: hidden;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        box-shadow: var(--shadow-sm);
         background: white;
+        border: 1px solid var(--academic-border);
     }
     .card {
-        border: none;
-        border-radius: 15px;
-        box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+        border: 1px solid var(--academic-border);
+        border-radius: var(--radius-md);
+        box-shadow: var(--shadow-sm);
         overflow: hidden;
         background: white;
     }
@@ -195,19 +174,20 @@
         overflow: hidden;
     }
     .table thead {
-        background: linear-gradient(135deg, #1e7e34 0%, #28a745 50%, #20c997 100%);
+        background: var(--academic-primary);
         color: white;
+        border-bottom: 2px solid var(--academic-green-dark);
     }
     .table thead th {
         border: none;
-        padding: clamp(1rem, 2vw, 1.25rem) clamp(0.875rem, 1.5vw, 1rem);
-        font-size: clamp(0.85rem, 1.8vw, 1rem);
-        font-weight: 700;
+        padding: var(--spacing-md) var(--spacing-sm);
+        font-size: var(--font-sm);
+        font-weight: 600;
         text-transform: uppercase;
-        letter-spacing: 0.8px;
-        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+        letter-spacing: 0.5px;
         white-space: nowrap;
         text-align: center;
+        font-family: 'Inter', sans-serif;
     }
     .table thead th:first-child {
         text-align: center;
@@ -222,10 +202,10 @@
         width: 200px;
     }
     .table tbody td {
-        padding: clamp(1rem, 1.8vw, 1.25rem) clamp(0.875rem, 1.5vw, 1rem);
-        font-size: clamp(0.875rem, 1.8vw, 0.95rem);
+        padding: var(--spacing-md) var(--spacing-sm);
+        font-size: var(--font-md);
         vertical-align: middle;
-        border-bottom: 1px solid #e9ecef;
+        border-bottom: 1px solid var(--academic-border);
         text-align: center;
         transition: all 0.2s ease;
     }
@@ -238,12 +218,10 @@
         text-align: left;
     }
     .table tbody tr {
-        border-bottom: 1px solid #e9ecef;
+        border-bottom: 1px solid var(--academic-border);
     }
     .table tbody tr:hover {
-        background-color: #f8f9fa;
-        transform: scale(1.002);
-        box-shadow: 0 2px 8px rgba(40, 167, 69, 0.1);
+        background-color: var(--academic-green-light);
         transition: all 0.2s ease;
     }
     .table tbody tr:last-child {
@@ -267,7 +245,7 @@
     .photo-thumb:hover {
         transform: scale(1.1);
         box-shadow: 0 4px 12px rgba(40, 167, 69, 0.35);
-        border-color: #28a745;
+        border-color: var(--academic-primary);
     }
     .photo-placeholder {
         width: clamp(50px, 8vw, 60px);
@@ -277,7 +255,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        color: #28a745;
+        color: var(--academic-primary);
         border: 3px solid #e9ecef;
         font-size: clamp(1.25rem, 2.5vw, 1.5rem);
         font-weight: 600;
@@ -288,7 +266,7 @@
     .photo-placeholder:hover {
         transform: scale(1.1);
         box-shadow: 0 4px 12px rgba(40, 167, 69, 0.25);
-        border-color: #28a745;
+        border-color: var(--academic-primary);
     }
     .btn-action {
         font-size: clamp(0.75rem, 1.4vw, 0.85rem);
@@ -348,8 +326,7 @@
         white-space: nowrap;
     }
     .badge.bg-success {
-        background: linear-gradient(135deg, #28a745 0%, #20c997 100%) !important;
-        box-shadow: 0 2px 8px rgba(40, 167, 69, 0.3);
+        background: var(--academic-success) !important;
     }
     .badge.bg-warning {
         background: linear-gradient(135deg, #ffc107 0%, #ff9800 100%) !important;
@@ -360,7 +337,7 @@
     }
     .nis-text {
         font-weight: 700;
-        color: #1e7e34;
+        color: var(--academic-primary);
         font-family: 'Courier New', monospace;
         font-size: clamp(0.85rem, 1.8vw, 0.95rem);
         letter-spacing: 0.5px;
@@ -402,23 +379,20 @@
     .pagination .page-link {
         border-radius: 8px;
         border: 2px solid #e9ecef;
-        color: #28a745;
+        color: var(--academic-primary);
         padding: 0.5rem 0.875rem;
         font-weight: 600;
         transition: all 0.3s ease;
     }
     .pagination .page-link:hover {
-        background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+        background: var(--academic-primary);
         color: white;
-        border-color: #28a745;
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+        border-color: var(--academic-primary);
     }
     .pagination .page-item.active .page-link {
-        background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
-        border-color: #28a745;
+        background: var(--academic-primary);
+        border-color: var(--academic-primary);
         color: white;
-        box-shadow: 0 4px 12px rgba(40, 167, 69, 0.4);
     }
     .pagination .page-item.disabled .page-link {
         opacity: 0.5;
@@ -573,7 +547,7 @@
     </div>
 
     @if(session('success'))
-        <div class="alert alert-success alert-dismissible fade show shadow-sm" role="alert" style="border-radius: 12px; border-left: 5px solid #28a745; font-weight: 600; padding: 1rem 1.25rem; margin-bottom: 1.5rem; background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%); border: none; box-shadow: 0 4px 15px rgba(40, 167, 69, 0.25);">
+        <div class="alert alert-success alert-dismissible fade show shadow-sm" role="alert" style="border-radius: 8px; border-left: 4px solid var(--academic-success); font-weight: 600; padding: 1rem 1.25rem; margin-bottom: 1.5rem; background: var(--academic-green-light); border: 1px solid var(--academic-border);">
             <i class="bi bi-check-circle-fill me-2" style="font-size: 1.2em;"></i> 
             <strong>{{ session('success') }}</strong>
             <button type="button" class="btn-close" data-bs-dismiss="alert" style="font-size: 0.9em;"></button>
@@ -665,11 +639,11 @@
                             <td colspan="9" class="text-center py-5">
                                 <div class="d-flex flex-column align-items-center">
                                     <div style="width: 120px; height: 120px; border-radius: 50%; background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);">
-                                        <i class="bi bi-inbox text-success" style="font-size: 4rem;"></i>
+                                        <i class="bi bi-inbox" style="font-size: 4rem; color: var(--academic-primary);"></i>
                                     </div>
                                     <h5 class="text-muted mb-2" style="font-weight: 600; font-size: 1.25rem;">Tidak ada data santri ditemukan</h5>
                                     <p class="text-muted mb-4" style="font-size: 1rem; opacity: 0.8;">Mulai dengan menambahkan data santri baru</p>
-                                    <a href="{{ route('santri.create') }}" class="btn btn-success btn-lg shadow-sm" style="border-radius: 10px; padding: 0.75rem 2rem; font-weight: 600;">
+                                    <a href="{{ route('santri.create') }}" class="btn btn-lg shadow-sm" style="background: var(--academic-primary); border-color: var(--academic-primary); color: white; border-radius: 8px; padding: 0.75rem 2rem; font-weight: 600;">
                                         <i class="bi bi-person-plus"></i> Tambah Santri Baru
                                     </a>
                                 </div>

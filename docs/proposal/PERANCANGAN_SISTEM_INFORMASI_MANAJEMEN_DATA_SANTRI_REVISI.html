@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PERANCANGAN SISTEM INFORMASI MANAJEMEN DATA SANTRI - REVISI</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2.5cm 3cm 2.5cm 3cm;
+        }
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 12pt;
+            line-height: 1.5;
+            color: #000;
+            text-align: justify;
+        }
+        h1 {
+            font-size: 16pt;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        h2 {
+            font-size: 14pt;
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        h3 {
+            font-size: 13pt;
+            font-weight: bold;
+            margin-top: 15px;
+            margin-bottom: 8px;
+        }
+        h4 {
+            font-size: 12pt;
+            font-weight: bold;
+            margin-top: 12px;
+            margin-bottom: 6px;
+        }
+        p {
+            text-align: justify;
+            margin-bottom: 10px;
+            text-indent: 1cm;
+        }
+        .no-indent {
+            text-indent: 0;
+        }
+        .bold {
+            font-weight: bold;
+        }
+        ul, ol {
+            margin-left: 1.5cm;
+            margin-bottom: 10px;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+        .page-break {
+            page-break-before: always;
+        }
+        .header-info {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-info">
+        <h1>PERANCANGAN SISTEM INFORMASI MANAJEMEN DATA SANTRI</h1>
+        <p class="bold no-indent">BERBASIS WEB</p>
+        <p class="bold no-indent">(STUDI KASUS PP HS AL-FAKKAR BANDAR KIDUL)</p>
+        <p class="no-indent" style="margin-top: 20px;">REVISI SESUAI PROYEK AKTUAL</p>
+        <p class="no-indent">Tanggal: 28 Desember 2025</p>
+    </div>
+
+    <div class="page-break"></div>
+
+    <h2>BAB I - PENDAHULUAN</h2>
+
+    <h3>A. Latar Belakang Masalah</h3>
+
+    <p>Indonesia dikenal sebagai salah satu pusat pendidikan Islam terbesar di dunia, yang ditunjukkan oleh keberadaan lebih dari 30.000 pondok pesantren yang menaungi jutaan santri (Ramadhani 2025). Pesantren memiliki peran penting dalam membentuk karakter, budaya, serta kompetensi keislaman santri, sekaligus berfungsi sebagai lembaga pendidikan tradisional dengan akar historis yang kuat dalam perkembangan Islam di Nusantara (Setiawan et al. 2019). Dalam konteks pendidikan pesantren, santri tidak hanya memperoleh pembelajaran keagamaan, tetapi juga mengembangkan berbagai keterampilan dan kompetensi lain yang diajarkan di lingkungan pesantren (Muhidin et al. 2025). Tingginya kompleksitas peran pesantren dan santri tersebut menuntut adanya sistem manajemen data santri yang terencana, terstruktur, dan berbasis pendekatan modern.</p>
+
+    <p>Meskipun teknologi informasi terus berkembang, sebagian besar pesantren masih menghadapi berbagai permasalahan dalam pengelolaan data santri. <span class="bold">Pendataan identitas santri, riwayat pendidikan, data wali santri, hingga status keaktifan umumnya masih dilakukan secara manual</span> melalui arsip kertas tanpa sistem terintegrasi. Kondisi tersebut berdampak pada keterlambatan pencatatan, meningkatnya risiko kesalahan penginputan, sulitnya proses pencarian data, serta rendahnya tingkat efisiensi dan akurasi pengelolaan data santri.</p>
+
+    <div class="page-break"></div>
+
+    <h2>BAB II - KAJIAN PUSTAKA</h2>
+
+    <h3>A. Landasan Teori</h3>
+
+    <h4>1. Manajemen Data</h4>
+
+    <p>Manajemen data santri berbasis web berfokus pada pengelolaan informasi santri yang meliputi data pribadi (nama, alamat, dan kontak), riwayat pendidikan, <span class="bold">data wali santri</span>, serta status keaktifan santri. Pengelolaan tersebut dilakukan melalui operasi Create, Read, Update, Delete (CRUD), dengan pemanfaatan Data Definition Language (DDL) untuk perancangan struktur basis data MySQL dan Data Manipulation Language (DML) untuk pemeliharaan dan pengolahan data. Sistem dikembangkan menggunakan framework Laravel 12 LTS yang menerapkan arsitektur Model–View–Controller (MVC), Eloquent Object Relational Mapping (ORM) untuk pengelolaan relasi data, serta Role-Based Access Control (RBAC) guna menjamin keamanan dan pembatasan hak akses pengguna. Penerapan sistem ini secara langsung ditujukan untuk mengurangi kesalahan input manual, mempercepat proses pencarian data, serta meminimalkan risiko kehilangan data, sebagaimana permasalahan di Asrama Takhossus Fathul Qorib (ASTAFQO) Pondok Pesantren HS Al-Fakkar Bandar Kidul (Siti Fatimah Rahmila dan Novebri Novebri 2024).</p>
+
+    <h4>2. Laravel</h4>
+
+    <p>Laravel mengimplementasikan Eloquent Object Relational Mapping (ORM) dengan pola Active Record untuk mendukung operasi Create, Read, Update, Delete (CRUD) dan pengelolaan relasi data, seperti hubungan <span class="bold">one-to-one antara User dan SantriDetail</span>, dilengkapi fluent query builder serta eager loading untuk mencegah masalah N+1 query. Pada lapisan tampilan, Laravel menggunakan Blade Templating Engine dengan direktif seperti @if, @foreach, dan @extends guna membangun antarmuka yang dinamis, modular, dan mudah dipelihara. Pengaturan alur aplikasi didukung oleh sistem routing dan middleware yang memungkinkan penerapan arsitektur Representational State Transfer (RESTful), autentikasi, perlindungan Cross-Site Request Forgery (CSRF), serta otorisasi berbasis Role-Based Access Control (RBAC). Selain itu, Artisan Command Line Interface (CLI) menyediakan fasilitas scaffolding, migrasi basis data, seeding, dan manajemen antrian, sehingga Laravel efektif digunakan untuk pengembangan sistem informasi manajemen data santri berbasis web yang terstruktur, aman, dan skalabel (Sinlae et al. 2024).</p>
+
+    <h4>3. PHP</h4>
+
+    <p>PHP versi <span class="bold">8.2 atau lebih tinggi</span> menjadi landasan utama pengembangan Laravel dengan dukungan fitur modern seperti Just-In-Time (JIT) compiler, typed properties, union types, attributes, serta match expressions yang memperkuat keamanan tipe data. Konsep superglobal PHP seperti $_GET, $_POST, dan $_SESSION dikelola secara terstruktur melalui Request Facade Laravel, sehingga meningkatkan keamanan dan keteraturan alur data. Prinsip Object-Oriented Programming PHP—meliputi class, trait, dan interface—diimplementasikan secara optimal pada Eloquent Model. Selain itu, penerapan namespace dan autoloading berbasis standar PSR-4 mendukung modularitas dan skalabilitas aplikasi. Mekanisme exception handling menggunakan try-catch serta custom exceptions juga diterapkan untuk memastikan manajemen kesalahan yang andal pada sistem informasi manajemen data santri (Bagaskara, Utama, dan Pratiwi 2024).</p>
+
+    <div class="page-break"></div>
+
+    <h2>BAB III - METODE PENELITIAN</h2>
+
+    <h3>A. Batasan Masalah</h3>
+
+    <p class="no-indent">Sistem informasi yang dikembangkan dibatasi pada pendataan santri di Asrama Takhossus Fathul Qorib (ASTAFQO) Pondok Pesantren HS Al-Fakkar Bandar Kidul, yang mencakup informasi pribadi santri, <span class="bold">data wali santri (nama wali, alamat wali, nomor HP wali)</span>, dan status keaktifan santri.</p>
+
+    <p class="no-indent">Pengembangan sistem dilakukan berbasis web menggunakan framework PHP Laravel, dengan fokus pada perancangan fitur inti yang mendukung proses pendataan dan pengelolaan data santri.</p>
+
+    <p class="no-indent">Penelitian tidak mencakup integrasi dengan sistem pendidikan lain, serta tidak membahas modul tambahan seperti pengelolaan absensi, pembayaran SPP, maupun manajemen sumber daya manusia secara menyeluruh.</p>
+
+    <p class="no-indent">Evaluasi sistem hanya difokuskan pada kelayakan fungsional dan penerimaan pengguna User Acceptance Test (UAT) sebelum implementasi, tanpa mencakup pemantauan jangka panjang setelah sistem diterapkan.</p>
+
+    <p class="no-indent">Sistem yang dirancang berfungsi sebagai wadah penyimpanan dan pengelolaan data internal pondok, dan belum mencakup fitur lanjutan seperti e-learning, modul keilmuan, atau layanan digital lainnya di luar kebutuhan manajemen data santri.</p>
+
+    <h3>C. Desain Pengembangan</h3>
+
+    <h4>Desain Basis Data</h4>
+
+    <p class="no-indent"><span class="bold">Desain Basis Data:</span> Perancangan struktur relasional tabel <code>users</code> dan <code>santri_detail</code> dengan relasi one-to-one menggunakan Foreign Key untuk menyimpan data santri secara efisien. Tabel <code>users</code> menyimpan data dasar pengguna (id, name, username, email, password, tanggal_lahir, role), sedangkan tabel <code>santri_detail</code> menyimpan detail lengkap santri (user_id sebagai Foreign Key, nis, tahun_masuk, alamat_santri, nomor_hp_santri, foto, status_santri, nama_wali, alamat_wali, nomor_hp_wali). Struktur database dirancang hingga tingkat normalisasi ketiga (3NF) untuk menghilangkan redundansi data.</p>
+
+    <h3>D. Tempat dan Waktu Perancangan</h3>
+
+    <h4>Implementasi - Perangkat Lunak</h4>
+
+    <p class="no-indent"><span class="bold">Perangkat Lunak (Software):</span></p>
+    <ul>
+        <li>Sistem Operasi: Windows 10/11 64-bit.</li>
+        <li>Editor Teks: Visual Studio Code.</li>
+        <li>Bahasa Pemrograman: PHP <span class="bold">8.2 atau lebih tinggi</span> (Kerangka Laravel 12).</li>
+        <li>Server Web: Apache (melalui Laragon).</li>
+        <li>Basis data: MySQL.</li>
+        <li>Browser: Google Chrome untuk men-debug tampilan.</li>
+    </ul>
+
+    <h4>Fitur Utama yang Dibangun</h4>
+
+    <p class="no-indent">Fitur utama yang dibangun meliputi:</p>
+
+    <p class="no-indent"><span class="bold">1. Modul Autentikasi Pengguna:</span> Fitur login dan logout untuk keamanan akses sistem. Sistem menggunakan unified login yang dapat mendeteksi otomatis apakah pengguna adalah admin atau santri berdasarkan format input (email untuk admin, username untuk santri). Password dienkripsi menggunakan algoritma Bcrypt untuk keamanan maksimal.</p>
+
+    <p class="no-indent"><span class="bold">2. Manajemen Data Master Santri (CRUD):</span> Fitur untuk menambah, melihat, mengedit, dan menghapus data santri beserta data wali santri. Sistem dilengkapi dengan:</p>
+    <ul>
+        <li>Upload foto santri dengan kemampuan crop gambar menggunakan Cropper.js</li>
+        <li>Validasi input untuk mencegah kesalahan data</li>
+        <li>Pencarian data santri berdasarkan nama, username, atau NIS</li>
+        <li>Filter data berdasarkan status keaktifan (aktif/boyong)</li>
+        <li>Pagination untuk kemudahan navigasi data</li>
+    </ul>
+
+    <p class="no-indent"><span class="bold">3. Manajemen Data Wali Santri:</span> Fitur untuk mengelola data wali santri yang terintegrasi dalam form data santri, meliputi nama wali, alamat wali, dan nomor HP wali.</p>
+
+    <p class="no-indent"><span class="bold">4. Rekapitulasi Laporan:</span> Fitur untuk mencetak dan mengunduh profil santri dalam format PDF. Sistem menyediakan:</p>
+    <ul>
+        <li>Tampilan print-friendly untuk profil santri</li>
+        <li>Download profil santri sebagai dokumen PDF</li>
+        <li>Format laporan yang rapi dan profesional</li>
+    </ul>
+
+    <h4>Fitur Tambahan (Opsional)</h4>
+
+    <p class="no-indent">Selain fitur utama yang telah disebutkan, sistem juga dilengkapi dengan fitur-fitur pendukung berikut:</p>
+
+    <p class="no-indent"><span class="bold">5. Manajemen Profil Pondok:</span> Admin dapat mengelola informasi profil pondok pesantren yang dapat dilihat oleh santri melalui dashboard mereka.</p>
+
+    <p class="no-indent"><span class="bold">6. Album Pondok:</span> Admin dapat mengelola album foto kegiatan pondok pesantren dengan kategori yang berbeda (kegiatan belajar, ngaji, olahraga, keagamaan, sosial, acara pondok). Santri dapat melihat album foto tersebut untuk mengetahui aktivitas pondok.</p>
+
+    <p class="no-indent"><span class="bold">7. Info Aplikasi:</span> Admin dapat mengelola informasi tentang aplikasi yang ditampilkan kepada pengguna, termasuk deskripsi aplikasi dan panduan penggunaan.</p>
+
+    <p class="no-indent"><span class="bold">8. Pengaturan Aplikasi:</span> Admin dapat mengatur konfigurasi tampilan aplikasi, termasuk nama aplikasi, logo, warna tema, dan teks footer sesuai kebutuhan.</p>
+
+    <p class="no-indent">Fitur-fitur tambahan ini mendukung pengalaman pengguna yang lebih lengkap dan meningkatkan nilai guna sistem informasi manajemen data santri secara keseluruhan.</p>
+
+    <div class="page-break"></div>
+
+    <h2>BAB IV - PENUTUP</h2>
+
+    <h3>A. Kesimpulan</h3>
+
+    <p>Sistem informasi yang dirancang bertujuan untuk mentransformasi proses pengelolaan data santri di Pondok Pesantren HS Al-Fakkar yang sebelumnya bersifat manual menjadi sistem digital yang terintegrasi, guna meminimalisir risiko kehilangan data dan meningkatkan efisiensi waktu kerja pengurus. Sistem berhasil mengimplementasikan fitur utama berupa autentikasi pengguna dengan unified login, manajemen data santri lengkap dengan CRUD, manajemen data wali santri, serta rekapitulasi laporan dalam format PDF. Selain itu, sistem juga dilengkapi dengan fitur pendukung seperti manajemen profil pondok, album foto, dan pengaturan aplikasi yang meningkatkan nilai guna sistem secara keseluruhan.</p>
+
+    <p>Pengembangan sistem ini menggunakan framework Laravel 12 dengan arsitektur Model-View-Controller (MVC) yang menjamin keamanan data melalui enkripsi Bcrypt dan memudahkan pemeliharaan sistem di masa mendatang karena struktur kodenya yang modular.</p>
+
+    <p>Penggunaan metode Waterfall (SDLC) memberikan alur pengembangan yang sangat terstruktur dan linear, mulai dari tahap analisis kebutuhan hingga pengujian, sehingga setiap fitur yang dibangun dipastikan sesuai dengan desain awal yang telah disepakati bersama pihak mitra.</p>
+
+    <p>Rencana pengujian fungsional menggunakan metode Black Box Testing dan pengujian keberterimaan pengguna melalui User Acceptance Test (UAT) menjadi instrumen validasi utama untuk memastikan bahwa sistem layak diimplementasikan secara teknis dan mudah digunakan oleh pengurus asrama.</p>
+
+    <div style="margin-top: 50px; text-align: center;">
+        <p class="no-indent">---</p>
+        <p class="no-indent">Dokumen Revisi</p>
+        <p class="no-indent">Tanggal: 28 Desember 2025</p>
+        <p class="no-indent">Versi: 2.0 (Final)</p>
+    </div>
+
+</body>
+</html>
+

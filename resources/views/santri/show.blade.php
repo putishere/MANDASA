@@ -5,12 +5,12 @@
 @section('content')
 <style>
     .page-header {
-        background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+        background: var(--academic-primary);
         color: white;
-        padding: clamp(1rem, 2vw, 1.5rem);
-        border-radius: 15px;
-        margin-bottom: 1.5rem;
-        box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+        padding: var(--spacing-md) var(--spacing-lg);
+        border-radius: var(--radius-md);
+        margin-bottom: var(--spacing-lg);
+        box-shadow: var(--shadow-md);
     }
     .page-header h2 {
         font-size: clamp(1.25rem, 3vw, 1.75rem);
@@ -18,14 +18,15 @@
         font-weight: 600;
     }
     .detail-card {
-        border-radius: 15px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        border-radius: var(--radius-md);
+        box-shadow: var(--shadow-sm);
         overflow: hidden;
+        border: 1px solid var(--academic-border);
     }
     .detail-card-header {
-        background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+        background: var(--academic-primary);
         color: white;
-        padding: clamp(1rem, 2vw, 1.5rem);
+        padding: var(--spacing-md) var(--spacing-lg);
         font-size: clamp(1.1rem, 2.5vw, 1.35rem);
         font-weight: 600;
     }
@@ -35,9 +36,9 @@
     .info-row {
         display: grid;
         grid-template-columns: 200px 1fr;
-        gap: 1rem;
-        padding: clamp(0.75rem, 1.5vw, 1rem) 0;
-        border-bottom: 1px solid #f0f0f0;
+        gap: var(--spacing-md);
+        padding: var(--spacing-sm) 0;
+        border-bottom: 1px solid var(--academic-border);
         align-items: start;
     }
     .info-row:last-child {
@@ -54,18 +55,19 @@
         word-break: break-word;
     }
     .info-value strong {
-        color: #28a745;
+        color: var(--academic-primary);
         font-weight: 600;
     }
     .photo-container {
         text-align: center;
-        padding: 1.5rem;
-        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-        border-radius: 10px;
+        padding: var(--spacing-lg);
+        background: var(--academic-green-light);
+        border-radius: var(--radius-md);
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
+        border: 1px solid var(--academic-border);
     }
     .photo-container img {
         width: 100%;
@@ -82,13 +84,14 @@
         max-width: 280px;
         aspect-ratio: 3/4;
         margin: 0 auto;
-        background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
-        border-radius: 10px;
+        background: var(--academic-green-light);
+        border-radius: var(--radius-md);
         display: flex;
         align-items: center;
         justify-content: center;
-        color: #28a745;
+        color: var(--academic-primary);
         font-size: 4rem;
+        border: 1px solid var(--academic-border);
     }
     .badge-custom {
         font-size: clamp(0.875rem, 2vw, 1rem);

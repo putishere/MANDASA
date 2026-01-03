@@ -143,6 +143,27 @@ class UnifiedEditController extends Controller
             }
 
             if ($updated) {
+                // Jika request AJAX, return JSON
+                if ($request->ajax() || $request->wantsJson() || $request->has('ajax')) {
+                    $profilPondok = ProfilPondok::getInstance()->fresh();
+                    $infoAplikasi = InfoAplikasi::getInstance()->fresh();
+                    
+                    // Tambahkan URL logo untuk memudahkan frontend
+                    $profilData = $profilPondok->toArray();
+                    if ($profilData['logo']) {
+                        $profilData['logo_url'] = asset('storage/' . $profilData['logo']);
+                    }
+                    
+                    return response()->json([
+                        'success' => true,
+                        'message' => 'Semua perubahan berhasil disimpan! Data langsung tampil.',
+                        'data' => [
+                            'profil_pondok' => $profilData,
+                            'info_aplikasi' => $infoAplikasi->toArray(),
+                        ]
+                    ]);
+                }
+                
                 return redirect()->route('admin.unified-edit.index')
                     ->with('success', 'Semua perubahan berhasil disimpan! Data akan langsung tampil setelah halaman di-refresh.')
                     ->withHeaders([
@@ -151,12 +172,32 @@ class UnifiedEditController extends Controller
                         'Expires' => '0'
                     ]);
             } else {
+                if ($request->ajax() || $request->wantsJson() || $request->has('ajax')) {
+                    return response()->json([
+                        'success' => false,
+                        'message' => 'Tidak ada perubahan yang disimpan.'
+                    ]);
+                }
+                
                 return redirect()->route('admin.unified-edit.index')
                     ->with('info', 'Tidak ada perubahan yang disimpan.');
             }
         } catch (\Illuminate\Validation\ValidationException $e) {
+            if ($request->ajax() || $request->wantsJson() || $request->has('ajax')) {
+                return response()->json([
+                    'success' => false,
+                    'message' => 'Validasi gagal',
+                    'errors' => $e->errors()
+                ], 422);
+            }
             return back()->withErrors($e->errors())->withInput();
         } catch (\Exception $e) {
+            if ($request->ajax() || $request->wantsJson() || $request->has('ajax')) {
+                return response()->json([
+                    'success' => false,
+                    'message' => 'Terjadi kesalahan: ' . $e->getMessage()
+                ], 500);
+            }
             return back()->withErrors(['error' => 'Terjadi kesalahan: ' . $e->getMessage()])->withInput();
         }
     }
